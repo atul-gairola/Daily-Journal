@@ -1,0 +1,10 @@
+<%- include('partials/header') -%>
+<h1>Home</h1>
+<p><%= contentHome %></p>
+
+<% postsArr.forEach(c => { %>
+  <h1><%= c.postTitle %></h1>
+  <p><%= c.postBody.slice(0,99) %> ...  <a href="http://localhost:3000/posts/<%=c.postTitle%>">Read more</a></p>
+<% }); %>
+
+<%- include('partials/footer') -%>
