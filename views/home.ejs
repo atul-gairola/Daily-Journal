@@ -1,10 +1,23 @@
 <%- include('partials/header') -%>
 <h1>Home</h1>
-<p><%= contentHome %></p>
+<p class="homeDescription"><%= contentHome %></p>
 
 <% postsArr.forEach(c => { %>
-  <h1><%= c.postTitle %></h1>
-  <p><%= c.postBody.slice(0,99) %> ...  <a href="http://localhost:3000/posts/<%=c.postTitle%>">Read more</a></p>
+  <h1><%= c.title %></h1>
+  <p class="postContent"><%= c.post.slice(0,99) %> ...  <a href="http://localhost:3000/posts/<%=c._id%>">Read more</a></p>
 <% }); %>
 
 <%- include('partials/footer') -%>
+
+
+<style media="screen">
+
+.postContent, .homeDescription{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #777;
+}
+
+.homeDescription{
+    padding-bottom: 50px;
+}
+</style>
